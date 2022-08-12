@@ -1,0 +1,113 @@
+{
+	"$schema": "../tmlanguage_new.json",
+	"name": "UTXT",
+	"patterns": [
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#parentheses"
+		},
+		{
+			"include": "#brackets"
+		},
+		{
+			"name": "variable.name.attentionkeyword.utxt",
+			"match": "\\b(?i:FixIt|ToDo|XXXX)\\b"
+		},
+		{
+			"name": "meta.function.utxt",
+			"match": "^\\s*((?i:Sub))\\s+([a-zA-Z_]\\w*)\\b",
+			"captures": {
+				"1": {
+					"name": "keyword.control.utxt"
+				},
+				"2": {
+					"name": "variable.other.sub.utxt"
+				}
+			}
+		},
+		{
+			"name": "keyword.control.utxt",
+			"match": "\\b(?i:Note)\\b"
+		},
+		{
+			"name": "keyword.operator.utxt",
+			"match": "\\+|\\-|\\*|\\/|>|<|=|>=|<=|<>"
+		},
+		{
+			"name": "string.quoted.double.utxt",
+			"match": "\".*?\""
+		},
+		{
+			"name": "string.quoted.single.utxt",
+			"match": "'.*?'"
+		},
+		{
+			"name": "constant.numeric.mavl",
+			"match": "\\b(0|[1-9]\\d*)(\\.[0-9]+)?\\b"
+		}
+	],
+	"repository": {
+		"comments": {
+			"patterns": [
+				{
+					"name": "comment.line.hashed-line.utxt",
+					"begin": "#",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.comment.utxt"
+						}
+					},
+					"end": "\n"
+				},
+				{
+				"name": "comment.line.double-slash.utxt",
+				"begin": "//",
+				"end": "\n"
+				}
+			]
+		},
+		"parentheses": {
+			"name": "meta.parentheses.utxt",
+			"begin": "\\(",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.parentheses.begin.utxt"
+				}
+			},
+			"end": "\\)",
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.parentheses.end.utxt"
+				}
+			},
+			"patterns": [
+				{
+					"include": "source.utxt"
+				}
+			]
+		},
+		"brackets": {
+			"name": "meta.brackets.utxt",
+			"begin": "\\[",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.brackets.begin.utxt"
+				}
+			},
+			"end": "\\]",
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.brackets.end.utxt"
+				}
+			},
+			"patterns": [
+				{
+					"include": "source.utxt"
+				}
+			]
+		}
+	},
+	"scopeName": "source.utxt"
+}
