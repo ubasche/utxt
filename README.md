@@ -143,4 +143,54 @@ See the [changelog](CHANGELOG.md) for details.
             "variable.parameter"
           ]
 
-  
+## Colors
+
+  comment.line       = grey
+
+  constant.numeric   = orange
+  constant.character = orange
+  constant.regexp    = orange
+
+  emphasis           = "white"
+
+  entity.name.class  = orange
+
+  header             = "white"
+
+  invalid.illegal    = "white"
+
+  keyword.control    = lila
+  keyword.operator   = lila
+
+  markup.bold        = orange
+  markup.deleted     = red
+  markup.changed     = lila
+  markup.heading     = red
+  markup.inline.raw  = "white"
+  markup.inserted    = green
+  markup.italic      = lila - italic
+  markup.list        = "white"
+  markup.list.numbered = "white"
+  markup.other       = "white"
+  markup.quote       = orange
+  markup.raw         = green
+  markup.underline   = "white"
+
+  meta.cast          = "white"
+  meta.preprocessor  = "white"
+
+  storage.type       = lila
+
+  string.html        = green
+  string.quoted      = green
+  string.regexp      = blue
+  string.xml         = green
+
+  strong             = "white"
+
+  support.class      = orange
+  support.constant   = orange
+
+  variable.name      = red
+  variable.parameter = "white"
+

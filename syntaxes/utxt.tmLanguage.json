@@ -16,6 +16,10 @@
 			"match": "\\b(?i:FixIt|ToDo|XXXX)\\b"
 		},
 		{
+			"name": "string.regexp.attentionkeyword.utxt",
+			"match": "\\b(?i:AAABBB-COLTEST)\\b"
+		},
+		{
 			"name": "meta.function.utxt",
 			"match": "^\\s*((?i:Sub))\\s+([a-zA-Z_]\\w*)\\b",
 			"captures": {
@@ -52,7 +56,8 @@
 		"comments": {
 			"patterns": [
 				{
-					"name": "comment.line.hashed-line.utxt",
+					"//comment": "Below is a comment line comment.line.hashed-line.utxt",
+					"name": "string.regexp.hashed-line.utxt",
 					"begin": "#",
 					"beginCaptures": {
 						"0": {
@@ -62,9 +67,10 @@
 					"end": "\n"
 				},
 				{
-				"name": "comment.line.double-slash.utxt",
-				"begin": "//",
-				"end": "\n"
+					"//comment": "Below is a comment line comment.line.double-slash.utxt",
+					"name": "string.regexp.double-slash.utxt",
+					"begin": "//",
+					"end": "\n"
 				}
 			]
 		},
