@@ -7,11 +7,10 @@ Contents
  ---  Heading 2
  ---  Heading 2
   ~~   Heading 3
- ---  Issues - Heading 1
+ ---  Issues - Heading 2
 
 ==== Appendix
  ---  Apx - winlogbeat.yml
-
 
 ========================================================================================================================
 ========================================================================================================================
@@ -32,14 +31,26 @@ Underlined text
 Underlined text 2
 ~~~~~~~~~~~~~~~~~
 
->>>>>
-sldjfk
 <<<<<
+Full example file      # comment
+>>>>>
 
 +++++
-aksdjf
+Partial example file   # comment
 +++++
 
+%%>
+Code example           // comment
+<%%
+
+.....
+Command output         # comment
+123                    // comment
+.....
+
+%> single command      // comment
+
+ 
 
 Note:
   - Copy the file "ii" into your home directory for easy access via ":r ii"
@@ -103,8 +114,8 @@ Command
   <command>
   ??
 
-Symtoms
--------
+Symptoms
+--------
   Error in alert.log
 
   The duplicate database from active failed with the following errors :

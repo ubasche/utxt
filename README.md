@@ -194,3 +194,9 @@ See the [changelog](CHANGELOG.md) for details.
   variable.name      = red
   variable.parameter = "white"
 
+
+
+# Syntax highlight info
+
+https://code.visualstudio.com/api/language-extensions/syntax-highlight-guide
+

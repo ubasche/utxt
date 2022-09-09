@@ -67,11 +67,113 @@
 					"end": "\n"
 				},
 				{
+					"//comment": "Below is a pattern for a heading level 1 text",
+					"begin": "^==== ",
+					"end": "\n",
+					"beginCaptures": {
+						"0": { "name": "keyword.operator.utxt" }
+					},
+					"name": "variable.name.attentionkeyword.utxt"
+				},
+				{
+					"//comment": "Below is a pattern for a heading level 2 text",
+					"begin": "^ ---  ",
+					"end": "\n",
+					"beginCaptures": {
+						"0": { "name": "keyword.operator.utxt" }
+					},
+					"name": "constant.numeric.utxt"
+				},
+				{
+					"//comment": "Below is a pattern for a heading level 3 text",
+					"begin": "^  ~~   ",
+					"end": "\n",
+					"beginCaptures": {
+						"0": { "name": "variable.parameter.utxt" }
+					},
+					"name": "string.quoted.double.utxt"
+				},
+				{
+					"//comment": "Block pattern: Full file content",
+					"begin": "<<<<<",
+					"end": ">>>>>",
+					"beginCaptures": {
+						"0": { "name": "keyword.operator.utxt" }
+					},
+					"endCaptures": {
+						"0": { "name": "keyword.operator.utxt" }
+					},
+					"name": "string.quoted.full-file-content.utxt",
+					"patterns": [
+						{
+						"include": "source.utxt"
+						}
+					]
+				},
+				{
+					"//comment": "Block pattern: Partial file content",
+					"begin": "\\+\\+\\+\\+\\+",
+					"end": "\\+\\+\\+\\+\\+",
+					"beginCaptures": {
+						"0": { "name": "keyword.operator.utxt" }
+					},
+					"endCaptures": {
+						"0": { "name": "keyword.operator.utxt" }
+					},
+					"name": "string.quoted.part-file-content.utxt",
+					"patterns": [
+						{
+						"include": "source.utxt"
+						}
+					]
+				},
+				{
+					"//comment": "Block pattern: Code",
+					"begin": "%%>",
+					"end": "<%%",
+					"beginCaptures": {
+						"0": { "name": "keyword.operator.utxt" }
+					},
+					"endCaptures": {
+						"0": { "name": "keyword.operator.utxt" }
+					},
+					"name": "string.regexp.code.utxt",
+					"patterns": [
+						{
+						"include": "source.utxt"
+						}
+					]
+				},
+				{
+					"//comment": "Block pattern: Command output",
+					"begin": "\\.\\.\\.\\.\\.",
+					"end": "\\.\\.\\.\\.\\.",
+					"beginCaptures": {
+						"0": { "name": "keyword.operator.utxt" }
+					},
+					"endCaptures": {
+						"0": { "name": "keyword.operator.utxt" }
+					},
+					"name": "string.regexp.command-output.utxt"
+				},
+				{
+					"//comment": "Below is a comment line for code examples",
+					"begin": "^\\s*%> ",
+					"end": "\n",
+					"beginCaptures": { "0": { "name": "keyword.operator.utx" } },
+					"name": "string.regexp.command-output.utxt",
+					"patterns": [
+						{
+						"include": "source.utxt"
+						}
+					]
+				},				
+				{
 					"//comment": "Below is a comment line comment.line.double-slash.utxt",
-					"name": "string.regexp.double-slash.utxt",
+					"name": "string.quoted.double.utxt",
 					"begin": "//",
 					"end": "\n"
-				}
+				}		
 			]
 		},
 		"parentheses": {
