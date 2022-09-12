@@ -103,12 +103,7 @@
 					"endCaptures": {
 						"0": { "name": "keyword.operator.utxt" }
 					},
-					"name": "string.quoted.full-file-content.utxt",
-					"patterns": [
-						{
-						"include": "source.utxt"
-						}
-					]
+					"name": "string.quoted.full-file-content.utxt"
 				},
 				{
 					"//comment": "Block pattern: Partial file content",
@@ -120,12 +115,7 @@
 					"endCaptures": {
 						"0": { "name": "keyword.operator.utxt" }
 					},
-					"name": "string.quoted.part-file-content.utxt",
-					"patterns": [
-						{
-						"include": "source.utxt"
-						}
-					]
+					"name": "string.quoted.part-file-content.utxt"
 				},
 				{
 					"//comment": "Block pattern: Code",
