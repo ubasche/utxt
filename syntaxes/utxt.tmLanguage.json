@@ -12,11 +12,11 @@
 			"include": "#brackets"
 		},
 		{
-			"name": "variable.name.attentionkeyword.utxt",
+			"name": "markup.bold.my.attentionkeyword.utxt",
 			"match": "\\b(?i:FixIt|ToDo|XXXX)\\b"
 		},
 		{
-			"name": "string.regexp.attentionkeyword.utxt",
+			"name": "keyword.my.testkeyword.utxt",
 			"match": "\\b(?i:AAABBB-COLTEST)\\b"
 		},
 		{
@@ -32,11 +32,11 @@
 			}
 		},
 		{
-			"name": "keyword.control.utxt",
+			"name": "variable.name.notekeyword.utxt",
 			"match": "\\b(?i:Note)\\b"
 		},
 		{
-			"name": "keyword.operator.utxt",
+			"name": "keyword.my.operator.utxt",
 			"match": "\\+|\\-|\\*|\\/|>|<|=|>=|<=|<>"
 		},
 		{
@@ -56,36 +56,37 @@
 		"comments": {
 			"patterns": [
 				{
-					"//comment": "Below is a comment line comment.line.hashed-line.utxt",
-					"name": "string.regexp.hashed-line.utxt",
+					"//comment": "Comment line - hashed",
+					"name": "string.regexp.my.hashed-line.utxt",
 					"begin": "#",
-					"beginCaptures": {
-						"0": {
-							"name": "punctuation.comment.utxt"
-						}
-					},
 					"end": "\n"
 				},
 				{
-					"//comment": "Below is a pattern for a heading level 1 text",
+					"//comment": "Comment line - double-slash",
+					"name": "string.my.doubleslash.utxt",
+					"begin": "//",
+					"end": "\n"
+				},	
+				{
+					"//comment": "Heading line - level 1",
 					"begin": "^==== ",
 					"end": "\n",
 					"beginCaptures": {
-						"0": { "name": "keyword.operator.utxt" }
+						"0": { "name": "keyword.my.operator.utxt" }
 					},
 					"name": "variable.name.attentionkeyword.utxt"
 				},
 				{
-					"//comment": "Below is a pattern for a heading level 2 text",
+					"//comment": "Heading line - level 2",
 					"begin": "^ ---  ",
 					"end": "\n",
 					"beginCaptures": {
-						"0": { "name": "keyword.operator.utxt" }
+						"0": { "name": "keyword.my.operator.utxt" }
 					},
 					"name": "constant.numeric.utxt"
 				},
 				{
-					"//comment": "Below is a pattern for a heading level 3 text",
+					"//comment": "Heading line - level 3",
 					"begin": "^  ~~   ",
 					"end": "\n",
 					"beginCaptures": {
@@ -94,40 +95,40 @@
 					"name": "string.quoted.double.utxt"
 				},
 				{
-					"//comment": "Block pattern: Full file content",
+					"//comment": "Full file - multi-line block",
 					"begin": "<<<<<",
 					"end": ">>>>>",
 					"beginCaptures": {
-						"0": { "name": "keyword.operator.utxt" }
+						"0": { "name": "keyword.my.operator.utxt" }
 					},
 					"endCaptures": {
-						"0": { "name": "keyword.operator.utxt" }
+						"0": { "name": "keyword.my.operator.utxt" }
 					},
-					"name": "string.quoted.full-file-content.utxt"
+					"name": "string.my.fullfile.utxt"
 				},
 				{
-					"//comment": "Block pattern: Partial file content",
+					"//comment": "Partial file - multi-line block",
 					"begin": "\\+\\+\\+\\+\\+",
 					"end": "\\+\\+\\+\\+\\+",
 					"beginCaptures": {
-						"0": { "name": "keyword.operator.utxt" }
+						"0": { "name": "keyword.my.operator.utxt" }
 					},
 					"endCaptures": {
-						"0": { "name": "keyword.operator.utxt" }
+						"0": { "name": "keyword.my.operator.utxt" }
 					},
-					"name": "string.quoted.part-file-content.utxt"
+					"name": "string.my.partfile.utxt"
 				},
 				{
-					"//comment": "Block pattern: Code",
-					"begin": "%%>",
-					"end": "<%%",
+					"//comment": "Code - multi-line block",
+					"begin": ",,,,,",
+					"end": ",,,,,",
 					"beginCaptures": {
-						"0": { "name": "keyword.operator.utxt" }
+						"0": { "name": "keyword.my.operator.utxt" }
 					},
 					"endCaptures": {
-						"0": { "name": "keyword.operator.utxt" }
+						"0": { "name": "keyword.my.operator.utxt" }
 					},
-					"name": "string.regexp.code.utxt",
+					"name": "string.my.codeblock.utxt",
 					"patterns": [
 						{
 						"include": "source.utxt"
@@ -135,35 +136,29 @@
 					]
 				},
 				{
-					"//comment": "Block pattern: Command output",
+					"//comment": "Command output - multi-line block",
 					"begin": "\\.\\.\\.\\.\\.",
 					"end": "\\.\\.\\.\\.\\.",
 					"beginCaptures": {
-						"0": { "name": "keyword.operator.utxt" }
+						"0": { "name": "keyword.my.operator.utxt" }
 					},
 					"endCaptures": {
-						"0": { "name": "keyword.operator.utxt" }
+						"0": { "name": "keyword.my.operator.utxt" }
 					},
-					"name": "string.regexp.command-output.utxt"
+					"name": "string.my.cmdoutput.utxt"
 				},
 				{
-					"//comment": "Below is a comment line for code examples",
-					"begin": "^\\s*%> ",
+					"//comment": "Code - single line",
+					"begin": "^\\s*,,> ",
 					"end": "\n",
-					"beginCaptures": { "0": { "name": "keyword.operator.utx" } },
-					"name": "string.regexp.command-output.utxt",
+					"beginCaptures": { "0": { "name": "keyword.my.operator.utx" } },
+					"name": "string.my.codeline.utxt",
 					"patterns": [
 						{
 						"include": "source.utxt"
 						}
 					]
-				},				
-				{
-					"//comment": "Below is a comment line comment.line.double-slash.utxt",
-					"name": "string.quoted.double.utxt",
-					"begin": "//",
-					"end": "\n"
-				}		
+				}	
 			]
 		},
 		"parentheses": {

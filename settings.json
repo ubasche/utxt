@@ -1,0 +1,75 @@
+{
+    "editor.minimap.enabled": false,
+    "workbench.colorCustomizations": {
+        "editor.background": "#252d3a",
+        "editor.largeFileOptimizations": false,
+        //
+        "titleBar.inactiveBackground": "#98979b",
+        "titleBar.inactiveForeground":"#2e2929",
+        "titleBar.activeBackground": "#c9743c",
+        "titleBar.activeForeground":"#ffffff",
+        //
+        "statusBar.background" : "#354b63",
+        "statusBar.foreground" : "#cecbd3",
+        "statusBar.noFolderBackground" : "#222225",
+        "statusBar.debuggingBackground": "#305070",
+        //
+        "tab.activeBackground": "#354b63",
+        "tab.activeForeground": "#cecbd3",
+        "tab.activeBorder": "#56c95c",
+        "tab.unfocusedActiveBorder": "#c0429a",
+       },
+    "workbench.tree.indent": 18,
+
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": [ "keyword.my.testkeyword.utxt", ],
+                 "settings": { "foreground": "#adb9df", }
+            },
+            {
+                "scope": [ "markup.bold.my.attentionkeyword.utxt", ],
+                 "settings": { "foreground": "#cecc49", }
+            },
+            {
+                "scope": [ "variable.name.notekeyword.utxt", ],
+                 "settings": { "foreground": "#ec6952", }
+            },
+            {
+                "scope": [ "string.my.fullfile.utxt", ],
+                 "settings": { "foreground": "#6fc789", }
+            },
+            {
+                "scope": [ "string.my.partfile.utxt", ],
+                 "settings": { "foreground": "#36b9b3", }
+            },
+            {
+                "scope": [ "string.my.codeblock.utxt", ],
+                 "settings": { "foreground": "#bec95d", }
+            },
+            {
+                "scope": [ "string.my.codeline.utxt", ],
+                 "settings": { "foreground": "#bec95d", }
+            },
+            {
+                "scope": [ "string.my.cmdoutput.utxt", ],
+                 "settings": { "foreground": "#a17c45", }
+            },
+            {
+                "scope": [ "string.regexp.my.hashed-line.utxt", ],
+                 "settings": { "foreground": "#599ffa", }
+            },
+            {
+                "scope": [ "string.my.doubleslash.utxt", ],
+                 "settings": { "foreground": "#5ac55a", }
+            },
+            {
+                "scope": [ "xxxx.keyword.my.operator.utxt", ],
+                 "settings": { "foreground": "#b86bb4", }
+            },
+        ]
+    },
+
+    "window.openFilesInNewWindow": "off",
+    "workbench.colorTheme": "Atom One Dark"
+}

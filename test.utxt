@@ -12,6 +12,12 @@ Contents
 ==== Appendix
  ---  Apx - winlogbeat.yml
 
+
+Note:
+  - To get the headings:
+      grep -E "==== | ---  |  ~~   " <file-name>
+      
+
 ========================================================================================================================
 ========================================================================================================================
 ==== Heading 1 - top = 120 char, bottom = 80 char
@@ -31,26 +37,31 @@ Underlined text
 Underlined text 2
 ~~~~~~~~~~~~~~~~~
 
+
 <<<<<
-Full example file      # comment
+Full file                  # comment
+                           // comment
 >>>>>
 
 +++++
-Partial example file   # comment
+Partial file, line graph   # comment
+                           // comment
 +++++
 
-%%>
-Code example           // comment
-<%%
+,,,,,
+Code block                 ## comment
+                           // comment
+,,,,,
 
 .....
-Command output         # comment
-123                    // comment
+Command output             # comment
+123                        // comment
 .....
 
-%> single command      // comment
-
+,,> code line              # comment
+,,> code line              // comment
  
+
 
 Note:
   - Copy the file "ii" into your home directory for easy access via ":r ii"
