@@ -83,7 +83,7 @@
 					"beginCaptures": {
 						"0": { "name": "keyword.my.operator.utxt" }
 					},
-					"name": "constant.numeric.utxt"
+					"name": "string.quoted.double.utxt"
 				},
 				{
 					"//comment": "Heading line - level 3",
@@ -92,7 +92,7 @@
 					"beginCaptures": {
 						"0": { "name": "variable.parameter.utxt" }
 					},
-					"name": "string.quoted.double.utxt"
+					"name": "constant.numeric.utxt"
 				},
 				{
 					"//comment": "Full file - multi-line block",

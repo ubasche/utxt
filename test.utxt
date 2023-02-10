@@ -12,6 +12,12 @@ Contents
 ==== Appendix
  ---  Apx - winlogbeat.yml
 
+==== Issues
+ ---  Issues - Kubernetes Common Errors (C)
+ ---  Issues - Templates
+  ~~   Issue T-0: Empty template
+  ~~   Issue T-1: Example template
+
 
 Note:
   - To get the headings:
@@ -82,15 +88,15 @@ Comments
 --------------------------------------------------------------------------------
 
 ------------------------------------------------------------
- ---  Issues - Ansible Common Errors (C)
+ ---  Issues - Kubernetes Common Errors (C)
 ------------------------------------------------------------
 
 ------------------------------------------------------------
- ---  Issues - Ansible General (G)
+ ---  Issues - Templates (T)
 ------------------------------------------------------------
 
 - --------------------------------------
-  ~~   Issue G-0: Description
+  ~~   Issue T-0: Empty template
 - --------------------------------------
 
 Command
@@ -117,7 +123,7 @@ Solution
 
 
 - --------------------------------------
-  ~~   Issue G-1: Description
+  ~~   Issue T-1: Example template
 - --------------------------------------
 
 Command
