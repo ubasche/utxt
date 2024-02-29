@@ -12,7 +12,10 @@ This Visual Studio Code extension adds support for UTXT language.
 
 ### From repository
 
-Copy this folder to `%USERPROFILE%\.vscode\extensions` (on Windows) or `~/.vscode/extensions` (on Linux/ Mac) and restart VS Code.
+Copy this folder to `c:\users\<username>\.vscode\extensions` (on Windows) or `~/.vscode/extensions` (on Linux/ Mac) and restart VS Code.
+
+Note:
+  - On your work laptop the directories may be hidden but you should still be able to go to them and copy the files there.
 
 ### From VS Code Marketplace
 
