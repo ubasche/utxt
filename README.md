@@ -32,10 +32,10 @@ See the [changelog](CHANGELOG.md) for details.
 
 ## Files
 
-  ./syntaxes/utxt.tmLanguage.json     - define patterns and colors (See below for colors. The colors are based on the VI color scheme.)
-  ./language-configuration.json       - define brackets
-  .package.json                       - define documents
-  ./tmlanguage.json                   - define elements
+  * ./syntaxes/utxt.tmLanguage.json     - define patterns and colors (See below for colors. The colors are based on the VI color scheme.)
+  * ./language-configuration.json       - define brackets
+  * .package.json                       - define documents
+  * ./tmlanguage.json                   - define elements
 
 ## Pattern types
 
