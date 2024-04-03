@@ -40,6 +40,10 @@
 			"match": "\\+|\\-|\\*|\\/|>|<|=|>=|<=|<>"
 		},
 		{
+			"name": "constant.numeric.utxt",
+			"match": "~"
+		},
+		{
 			"name": "string.quoted.double.utxt",
 			"match": "\".*?\""
 		},
