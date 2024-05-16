@@ -91,7 +91,7 @@
 				},
 				{
 					"//comment": "Heading line - level 3",
-					"begin": "^    -- ",
+					"begin": "^    -:- ",
 					"end": "\n",
 					"beginCaptures": {
 						"0": { "name": "variable.parameter.utxt" }
