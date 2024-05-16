@@ -94,7 +94,7 @@
 					"begin": "^    -:- ",
 					"end": "\n",
 					"beginCaptures": {
-						"0": { "name": "variable.parameter.utxt" }
+						"0": { "name": "constant.numeric.utxt" }
 					},
 					"name": "constant.numeric.utxt"
 				},
