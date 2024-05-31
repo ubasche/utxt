@@ -10,9 +10,26 @@ This Visual Studio Code extension adds support for UTXT language.
 
 ## Installation
 
+### VSCode extensions
+
+Extensions are installed in a per user extensions folder. Depending on your platform, the location is in the following folder:
+
+  Windows %USERPROFILE%\.vscode\extensions
+  macOS ~/.vscode/extensions
+  Linux ~/.vscode/extensions
+
 ### From repository
 
-Copy this folder to `c:\users\<username>\.vscode\extensions` (on Windows) or `~/.vscode/extensions` (on Linux/ Mac) and restart VS Code.
+In windows:
+  Open Powershell terminal !!!:
+    cd c:\users\<username>\.vscode\extensions
+    git clone <repo>
+    restart vscode
+
+In Linux/Mac:
+  cd ~/.vscode/extensions
+  git clone <repo>
+  restart vscode
 
 Note:
   - On your work laptop the directories may be hidden but you should still be able to go to them and copy the files there.
