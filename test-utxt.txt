@@ -6,7 +6,8 @@ Contents
 ==== Heading 1
   ~~~ Heading 2
   ~~~ Heading 2
-    -- Heading 3
+    -:- Heading 3
+  ~~~ Issues - Heading 2
 
 ==== Appendix
   ~~~ Apx - winlogbeat.yml
@@ -14,23 +15,15 @@ Contents
 ==== Issues
   ~~~ Issues - Kubernetes Common Errors (C)
   ~~~ Issues - Templates
-    -- Issue T-0: Empty template
-    -- Issue T-1: Example template
+    -:- Issue T-0: Empty template
+    -:- Issue T-1: Example template
 
 
 ------------------------------------------------------------
 Note:
   - To get the headings:
-      grep -E "==== |  ~~~ |    -- " "file.txt"
-      Get-ChildItem -Path "file.txt" | Select-String -Pattern '(==== )|(  ~~~ )|(    -- )'
-      type "file.txt" | Select-String -Pattern '(==== )|(  ~~~ )|(    -- )'
-      ---
-      grep -E "==== |  ~~~ |    -- " "XXX.txt"
-      type "XXX.txt" | Select-String -Pattern '(==== )|(  ~~~ )|(    -- )'
-
-==== xxxxxxxxxx xxxxxxxxxx xxxxxxxxxx ====
-------------------------------------------------------------
-
+      grep -E "==== |  ~~~ |    -:- " <file-name>
+      
 
 ========================================================================================================================
 ========================================================================================================================
@@ -77,6 +70,24 @@ Command output             # comment
 ,,> code line              // comment
  
 
+Lists
+-----
+  Single bullet list:
+    - Item level 1
+        ~ Item level 2
+        ~ Item level 2
+            + Item level 3
+    - Item level 1
+
+  Double bullet list:
+    -- Item level 1
+        ~~ Item level 2
+        ~~ Item level 2
+
+
+        
+            ++ Item level 3
+    -- Item level 1
 
 Note:
   - Copy the file "ii" into your home directory for easy access via ":r ii"
