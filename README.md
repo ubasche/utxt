@@ -31,5 +31,6 @@ Add below code to ~/.vscode/extensions/extensions.json
             "installedTimestamp": 1675539259186,
             "preRelease": false
         }
+    }
 ```
 
