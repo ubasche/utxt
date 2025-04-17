@@ -6,6 +6,7 @@ Syntax highlighting for text files.
 
 
 Add below code to ~/.vscode/extensions/extensions.json
+Amend the path as required.
 
 ```
     {
