@@ -1,210 +1,558 @@
 {
-	"$schema": "../tmlanguage_new.json",
-	"name": "UTXT",
-	"patterns": [
-		{
-			"include": "#comments"
-		},
-		{
-			"include": "#parentheses"
-		},
-		{
-			"include": "#brackets"
-		},
-		{
-			"name": "markup.bold.my.attentionkeyword.utxt",
-			"match": "\\b(?i:FixIt|ToDo|XXXX)\\b"
-		},
-		{
-			"name": "keyword.my.testkeyword.utxt",
-			"match": "\\b(?i:AAABBB-COLTEST)\\b"
-		},
-		{
-			"name": "meta.function.utxt",
-			"match": "^\\s*((?i:Sub))\\s+([a-zA-Z_]\\w*)\\b",
-			"captures": {
-				"1": {
-					"name": "keyword.control.utxt"
-				},
-				"2": {
-					"name": "variable.other.sub.utxt"
-				}
-			}
-		},
-		{
-			"name": "variable.name.notekeyword.utxt",
-			"match": "\\b(?i:Note)\\b"
-		},
-		{
-			"name": "keyword.my.operator.utxt",
-			"match": "\\+|\\-|\\*|\\/|>|<|=|>=|<=|<>"
-		},
-		{
-			"name": "constant.numeric.utxt",
-			"match": "~"
-		},
-		{
-			"name": "string.quoted.double.utxt",
-			"match": "\".*?\""
-		},
-		{
-			"name": "string.quoted.single.utxt",
-			"match": "'.*?'"
-		},
-		{
-			"name": "constant.numeric.mavl",
-			"match": "\\b(0|[1-9]\\d*)(\\.[0-9]+)?\\b"
-		}
-	],
-	"repository": {
-		"comments": {
-			"patterns": [
-				{
-					"//comment": "Comment line - hashed",
-					"name": "string.regexp.my.hashed-line.utxt",
-					"begin": "#",
-					"end": "\n"
-				},
-				{
-					"//comment": "Comment line - double-slash",
-					"name": "string.my.doubleslash.utxt",
-					"begin": "//",
-					"end": "\n"
-				},	
-				{
-					"//comment": "Heading line - level 1",
-					"begin": "^==== ",
-					"end": "\n",
-					"beginCaptures": {
-						"0": { "name": "keyword.my.operator.utxt" }
-					},
-					"name": "variable.name.attentionkeyword.utxt"
-				},
-				{
-					"//comment": "Heading line - level 2",
-					"begin": "^  ~~~ ",
-					"end": "\n",
-					"beginCaptures": {
-						"0": { "name": "keyword.my.operator.utxt" }
-					},
-					"name": "string.quoted.double.utxt"
-				},
-				{
-					"//comment": "Heading line - level 3",
-					"begin": "^    -:- ",
-					"end": "\n",
-					"beginCaptures": {
-						"0": { "name": "constant.numeric.utxt" }
-					},
-					"name": "constant.numeric.utxt"
-				},
-				{
-					"//comment": "Full file - multi-line block",
-					"begin": "<<<<<",
-					"end": ">>>>>",
-					"beginCaptures": {
-						"0": { "name": "keyword.my.operator.utxt" }
-					},
-					"endCaptures": {
-						"0": { "name": "keyword.my.operator.utxt" }
-					},
-					"name": "string.my.fullfile.utxt"
-				},
-				{
-					"//comment": "Partial file - multi-line block",
-					"begin": "\\+\\+\\+\\+\\+",
-					"end": "\\+\\+\\+\\+\\+",
-					"beginCaptures": {
-						"0": { "name": "keyword.my.operator.utxt" }
-					},
-					"endCaptures": {
-						"0": { "name": "keyword.my.operator.utxt" }
-					},
-					"name": "string.my.partfile.utxt"
-				},
-				{
-					"//comment": "Code - multi-line block",
-					"begin": ",,,,,",
-					"end": ",,,,,",
-					"beginCaptures": {
-						"0": { "name": "keyword.my.operator.utxt" }
-					},
-					"endCaptures": {
-						"0": { "name": "keyword.my.operator.utxt" }
-					},
-					"name": "string.my.codeblock.utxt",
-					"patterns": [
-						{
-						"include": "source.utxt"
-						}
-					]
-				},
-				{
-					"//comment": "Command output - multi-line block",
-					"begin": "\\.\\.\\.\\.\\.",
-					"end": "\\.\\.\\.\\.\\.",
-					"beginCaptures": {
-						"0": { "name": "keyword.my.operator.utxt" }
-					},
-					"endCaptures": {
-						"0": { "name": "keyword.my.operator.utxt" }
-					},
-					"name": "string.my.cmdoutput.utxt"
-				},
-				{
-					"//comment": "Code - single line",
-					"begin": "^\\s*,,> ",
-					"end": "\n",
-					"beginCaptures": { "0": { "name": "keyword.my.operator.utx" } },
-					"name": "string.my.codeline.utxt",
-					"patterns": [
-						{
-						"include": "source.utxt"
-						}
-					]
-				}	
-			]
-		},
-		"parentheses": {
-			"name": "meta.parentheses.utxt",
-			"begin": "\\(",
-			"beginCaptures": {
-				"0": {
-					"name": "punctuation.parentheses.begin.utxt"
-				}
-			},
-			"end": "\\)",
-			"endCaptures": {
-				"0": {
-					"name": "punctuation.parentheses.end.utxt"
-				}
-			},
-			"patterns": [
-				{
-					"include": "source.utxt"
-				}
-			]
-		},
-		"brackets": {
-			"name": "meta.brackets.utxt",
-			"begin": "\\[",
-			"beginCaptures": {
-				"0": {
-					"name": "punctuation.brackets.begin.utxt"
-				}
-			},
-			"end": "\\]",
-			"endCaptures": {
-				"0": {
-					"name": "punctuation.brackets.end.utxt"
-				}
-			},
-			"patterns": [
-				{
-					"include": "source.utxt"
-				}
-			]
-		}
-	},
-	"scopeName": "source.utxt"
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/txt.tmlanguage.json",
+  "name": "Txt",
+  "patterns": [
+    {
+      "begin": "(^[ \\t]+)?(?=#)",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.whitespace.comment.leading.txt"
+        }
+      },
+      "end": "(?!\\G)",
+      "patterns": [
+        {
+          "begin": "#",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.definition.comment.txt"
+            }
+          },
+          "end": "\\n",
+          "name": "comment.line.number-sign.txt"
+        }
+      ]
+    },
+    {
+      "begin": "^([ \\t]+)?(?=;)",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.whitespace.comment.leading.txt"
+        }
+      },
+      "end": "(?!\\G)",
+      "patterns": [
+        {
+          "begin": ";",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.definition.comment.txt"
+            }
+          },
+          "end": "\\n",
+          "name": "comment.line.semicolon.txt"
+        }
+      ]
+    },
+    {
+      "begin": "^(第[^\\S\\r\\n]|第)?[一二三四五六七八九十百千万亿兆零壹贰叁肆伍陆柒捌玖拾佰仟甲乙丙丁戊己庚辛壬癸子丑寅卯辰巳午未申酉戌亥]+($|[^\\S\\r\\n])?[章节篇部首回手课页段组卷区场合季级集任步条件年月日周天轮个项类期话例]?($|[\\.、].*?|[^\\S\\r\\n].*?)",
+      "beginCaptures": {
+        "0": {
+          "name": "keyword.other.definition.txt"
+        }
+      },
+      "end": "\\n",
+      "endCaptures": {
+        "0": {
+          "name": "keyword.other.definition.txt"
+        }
+      },
+      "name": "keyword.other.definition.txt"
+    },
+    {
+      "begin": "^(第[^\\S\\r\\n]|第)?[0123456789]+[^\\S\\r\\n]?[章节篇部首回手课页段组卷区场合季级集任步条件年月日周天轮个项类期话例]($|[\\.、].*?|[^\\S\\r\\n].*?)|^(第[^\\S\\r\\n]|第)[0123456789]+($|[\\.、].*?|[^\\S\\r\\n].*?)",
+      "beginCaptures": {
+        "0": {
+          "name": "keyword.other.definition.txt"
+        }
+      },
+      "end": "\\n",
+      "endCaptures": {
+        "0": {
+          "name": "keyword.other.definition.txt"
+        }
+      },
+      "name": "keyword.other.definition.txt"
+    },
+    {
+      "begin": "^(Section|SECTION|Chapter|CHAPTER|Sheet|SHEET|Season|SEASON|Period|PERIOD|Round|ROUND|Class|CLASS|Term|TERM|Part|PART|Page|PAGE|Segment|SEGMENT|Paragraph|PARAGRAPH|Lesson|LESSON|Region|REGION|Step|STEP|Level|LEVEL|Set|SET|Grade|GRADE|Year|YEAR|Month|MONTH|Week|WEEK|Day|DAY)[^\\S\\r\\n][A-Z0-9]+\\.?($|[^\\S\\r\\n].*?)",
+      "beginCaptures": {
+        "0": {
+          "name": "keyword.other.definition.txt"
+        }
+      },
+      "end": "\\n",
+      "endCaptures": {
+        "0": {
+          "name": "keyword.other.definition.txt"
+        }
+      },
+      "name": "keyword.other.definition.txt"
+    },
+    {
+      "begin": "^\\s*[0-9]+\\.\\s-.*?",
+      "beginCaptures": {
+        "0": {
+          "name": "keyword.other.definition.txt"
+        }
+      },
+      "end": "\\n",
+      "endCaptures": {
+        "0": {
+          "name": "keyword.other.definition.txt"
+        }
+      },
+      "name": "keyword.other.definition.txt"
+    },
+    {
+      "begin": "^\\s*[A-Za-z]+\\.\\s-.*?",
+      "beginCaptures": {
+        "0": {
+          "name": "variable.other.sign.txt"
+        }
+      },
+      "end": "\\n",
+      "endCaptures": {
+        "0": {
+          "name": "variable.other.sign.txt"
+        }
+      },
+      "name": "variable.other.sign.txt"
+    },
+    {
+      "begin": "^\\*[^\\S\\r\\n].*?",
+      "beginCaptures": {
+        "0": {
+          "name": "keyword.other.definition.txt"
+        }
+      },
+      "end": "\\n",
+      "endCaptures": {
+        "0": {
+          "name": "keyword.other.definition.txt"
+        }
+      },
+      "name": "keyword.other.definition.txt"
+    },
+    {
+      "begin": "^-\\*-.*?",
+      "beginCaptures": {
+        "0": {
+          "name": "keyword.other.definition.txt"
+        }
+      },
+      "end": "\\n",
+      "endCaptures": {
+        "0": {
+          "name": "keyword.other.definition.txt"
+        }
+      },
+      "name": "keyword.other.definition.txt"
+    },
+    {
+      "match": "^\\s*\\$[^#]*",
+      "name": "entity.name.type.txt"
+    },
+    {
+      "match": "\\$[A-Za-z_]\\S*",
+      "name": "variable.other.sign.txt"
+    },
+    {
+      "match": "^\\[.+?\\]\\s*$",
+      "name": "keyword.other.definition.txt"
+    },
+
+
+
+    {
+      "begin": "^[^\\S\\r\\n]*[-\\=\\+\\~\\*\\s]*\\s*[\\!][\\!][\\!][^\\S\\r\\n].*?",
+      "beginCaptures": {
+        "0": {
+          "name": "string.regexp.txt"
+        }
+      },
+      "end": "\\n",
+      "endCaptures": {
+        "0": {
+          "name": "string.regexp.txt"
+        }
+      },
+      "name": "string.regexp.txt"
+    },
+
+
+    {
+      "match": "\\b(?i:FixIt|ToDo|XXXX)\\b",
+      "name": "string.regexp.txt"
+    },
+
+    {
+      "match": "^[^\\S\\r\\n]*Notx\\b",
+      "name": "string.regexp.txt"
+    },
+    {
+      "match": "Note:|NOTE:",
+        "name": "string.regexp.txt"
+    },
+    {
+      "begin": "^=== ",
+      "beginCaptures": {
+        "0": {
+          "name": "fg.syntax.color.lightgrey.utxt"
+        }
+      },
+      "end": "\\n",
+      "endCaptures": {
+        "0": {
+          "name": "fg.syntax.color.pink.utxt"
+        }
+      },
+      "name": "fg.syntax.color.pink.utxt"
+    },
+    {
+      "begin": "^  ~~~ ",
+      "beginCaptures": {
+        "0": {
+          "name": "fg.syntax.color.lightgrey.utxt"
+        }
+      },
+      "end": "\\n",
+      "endCaptures": {
+        "0": {
+          "name": "fg.syntax.color.orange.utxt"
+        }
+      },
+      "name": "fg.syntax.color.orange.utxt"
+    },
+    {
+      "begin": "^    -:- ",
+      "beginCaptures": {
+        "0": {
+          "name": "fg.syntax.color.lightgrey.utxt"
+        }
+      },
+      "end": "\\n",
+      "endCaptures": {
+        "0": {
+          "name": "entity.name.function.txt"
+        }
+      },
+      "name": "entity.name.function.txt"
+    },
+
+
+
+    {
+      "match": "(https?://|tftp://|ftp://|smtp://|pop3://|snmp://|telnet://|imap://|dhcp://|dns://|nfs://|file://|sftp://|ssl://|smb://|vmess://|socks://)\\S*",
+      "name": "entity.name.type.txt"
+    },
+    {
+      "match": "(\\.{0,2}|~)(\\w:\\\\|file:///|/)[\\w\\./\\-\\=\\+:@%&\\(\\)\\<\\>\\[\\]\\{\\}\\\\]*\\.?\\w*",
+      "name": "entity.name.type.txt"
+    },
+    {
+      "match": "\\w[-._+\\w]*\\w@\\w[-._\\w]*\\w\\.\\w{2,4}",
+      "name": "entity.name.type.txt"
+    },
+    {
+      "captures": {
+        "1": {
+          "name": "variable.other.sign.txt"
+        },
+        "2": {
+          "name": "entity.name.type.txt"
+        }
+      },
+      "match": "\\b([a-zA-Z_.-][a-zA-Z0-9_.-]*)\\b\\s*(:?=)"
+    },
+    {
+      "match": "\\d+",
+      "name": "constant.character.sign.txt"
+    },
+    {
+      "captures": {
+        "1": {
+          "name": "entity.name.function.txt"
+        },
+        "3": {
+          "name": "entity.name.function.txt"
+        }
+      },
+      "match": "(\\[)(.*?)(\\])",
+      "name": "entity.name.function.txt"
+    },
+    {
+      "captures": {
+        "1": {
+          "name": "entity.name.function.txt"
+        },
+        "3": {
+          "name": "entity.name.function.txt"
+        }
+      },
+      "match": "(\\{)(.*?)(\\})",
+      "name": "entity.name.function.txt"
+    },
+    {
+      "captures": {
+        "1": {
+          "name": "entity.name.function.txt"
+        },
+        "3": {
+          "name": "entity.name.function.txt"
+        }
+      },
+      "match": "(\\()(.*?)(\\))",
+      "name": "entity.name.function.txt"
+    },
+    {
+      "captures": {
+        "1": {
+          "name": "entity.name.function.txt"
+        },
+        "3": {
+          "name": "entity.name.function.txt"
+        }
+      },
+      "match": "(\\<)(.*?)(\\>)",
+      "name": "entity.name.function.txt"
+    },
+    {
+      "captures": {
+        "1": {
+          "name": "entity.name.function.txt"
+        },
+        "3": {
+          "name": "entity.name.function.txt"
+        }
+      },
+      "match": "(【)(.*?)(】)",
+      "name": "entity.name.function.txt"
+    },
+    {
+      "captures": {
+        "1": {
+          "name": "entity.name.function.txt"
+        },
+        "3": {
+          "name": "entity.name.function.txt"
+        }
+      },
+      "match": "(（)(.*?)(）)",
+      "name": "entity.name.function.txt"
+    },
+    {
+      "captures": {
+        "1": {
+          "name": "entity.name.function.txt"
+        },
+        "3": {
+          "name": "entity.name.function.txt"
+        }
+      },
+      "match": "(＜)(.*?)(＞)",
+      "name": "entity.name.function.txt"
+    },
+    {
+      "captures": {
+        "1": {
+          "name": "entity.name.function.txt"
+        },
+        "3": {
+          "name": "entity.name.function.txt"
+        }
+      },
+      "match": "(«)(.*?)(»)",
+      "name": "entity.name.function.txt"
+    },
+    {
+      "captures": {
+        "1": {
+          "name": "entity.name.function.txt"
+        },
+        "3": {
+          "name": "entity.name.function.txt"
+        }
+      },
+      "match": "(《)(.*?)(》)",
+      "name": "entity.name.function.txt"
+    },
+    {
+      "captures": {
+        "1": {
+          "name": "entity.name.function.txt"
+        },
+        "3": {
+          "name": "entity.name.function.txt"
+        }
+      },
+      "match": "(〔)(.*?)(〕)",
+      "name": "entity.name.function.txt"
+    },
+    {
+      "captures": {
+        "1": {
+          "name": "entity.name.function.txt"
+        },
+        "3": {
+          "name": "entity.name.function.txt"
+        }
+      },
+      "match": "(『)(.*?)(』)",
+      "name": "entity.name.function.txt"
+    },
+    {
+      "captures": {
+        "1": {
+          "name": "entity.name.function.txt"
+        },
+        "3": {
+          "name": "entity.name.function.txt"
+        }
+      },
+      "match": "(﹃)(.*?)(﹄)",
+      "name": "entity.name.function.txt"
+    },
+    {
+      "captures": {
+        "1": {
+          "name": "entity.name.function.txt"
+        },
+        "3": {
+          "name": "entity.name.function.txt"
+        }
+      },
+      "match": "(「)(.*?)(」)",
+      "name": "entity.name.function.txt"
+    },
+    {
+      "captures": {
+        "1": {
+          "name": "entity.name.function.txt"
+        },
+        "3": {
+          "name": "entity.name.function.txt"
+        }
+      },
+      "match": "(［)(.*?)(］)",
+      "name": "entity.name.function.txt"
+    },
+    {
+      "begin": "‘",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.definition.string.begin.txt"
+        }
+      },
+      "end": "’",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.definition.string.end.txt"
+        }
+      },
+      "name": "string.quoted.singlecn.txt",
+      "patterns": [
+        {
+          "match": "\\\\.",
+          "name": "constant.character.escape.txt"
+        }
+      ]
+    },
+    {
+      "begin": "“",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.definition.string.begin.txt"
+        }
+      },
+      "end": "”",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.definition.string.end.txt"
+        }
+      },
+      "name": "string.quoted.doublecn.txt",
+      "patterns": [
+        {
+          "match": "\\\\.",
+          "name": "constant.character.escape.txt"
+        }
+      ]
+    },
+    {
+      "begin": "„",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.definition.string.begin.txt"
+        }
+      },
+      "end": "“",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.definition.string.end.txt"
+        }
+      },
+      "name": "string.quoted.doublecn.txt",
+      "patterns": [
+        {
+          "match": "\\\\.",
+          "name": "constant.character.escape.txt"
+        }
+      ]
+    },
+    {
+      "captures": {
+        "1": {
+          "name": "string.quoted.single.txt"
+        },
+        "3": {
+          "name": "string.quoted.single.txt"
+        }
+      },
+      "match": "(\\')(((?!s\\s).)*?)(\\')",
+      "name": "string.quoted.single.txt"
+    },
+    {
+      "begin": "\"",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.definition.string.begin.txt"
+        }
+      },
+      "end": "\"",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.definition.string.end.txt"
+        }
+      },
+      "name": "string.quoted.double.txt"
+    },
+    {
+      "begin": "`",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.definition.string.begin.txt"
+        }
+      },
+      "end": "`",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.definition.string.end.txt"
+        }
+      },
+      "name": "string.quoted.doublecn.txt",
+      "patterns": [
+        {
+          "match": "\\\\.",
+          "name": "constant.character.escape.txt"
+        }
+      ]
+    },
+    {
+      "match": "\\,|\\.|\\,|\\，|\\。|\\－|\\……|\\──|\\___|\\——|\\—|\\-|\\_|\\+|\\=|\\*|\\&|\\;|\\；|\\、|\\:|\\：|\\·|\\!|\\！|\\@|\\$|\\%|\\^|\\/|\\?|\\？|\\~|\\～|\\／|\\\\|\\||\\<|\\>|\\(|\\)|\\{|\\}|\\[|\\]|\\《|\\》|\\（|\\）|\\【|\\】|\\￥|\\°|\\√|\\×|\\*|\\○|\\●|\\◇|\\◆|\\□|\\■|\\△|\\▲|\\▽|\\▼|\\▷|\\▶|\\◁|\\◀|\\☆|\\★|\\♤|\\♠|\\♡|\\♥|\\♢|\\♦|\\♧|\\♣|\\☼|\\☀|\\☺|\\☻|\\◘|\\◙|\\☏|\\☎|\\☜|\\☞|\\◐|\\◑|\\☽|\\☾|\\♀|\\♂|\\☑|\\☒|\\✔|\\✘|\\㏂|\\㏘|\\✎|\\✐|\\⊙|\\◎|\\✉|\\❤|\\▁|\\▂|\\▄|\\▇|\\☢|\\✄|\\☂|\\☉|\\☣|\\☄|\\☯|\\☪|\\☭|\\❂|\\✪|\\❉|\\❈|\\✲|\\◈|\\▣|\\⊿|\\⊕|\\Θ|\\▣|\\✚|\\✖|\\✙|\\۩|\\▫|\\❀|\\•|\\▪|\\⊹|\\✲|\\❦|\\◕|\\♞|\\☃|\\☪|\\®|\\©|\\™|\\℗|\\囍|\\№|\\☠|\\◤|\\◥|\\◣|\\◢|\\↖|\\↙|\\↗|\\↘|\\↑|\\↓|\\←|\\→|\\↔|\\↕|\\╱|\\╲|\\☍|\\☌|\\☋|\\▩|\\▨|\\▤|\\▥|\\▧|\\▦|\\㏇|\\➴|\\➵|\\✈|\\〄|\\㊤|\\㊥|\\㊦|\\㊧|\\㊨|\\㊚|\\㊛|\\㊣|\\㊙|\\㉿|\\㈱|\\⊱|\\⊰|\\⋌|\\§|\\‖|\\Ψ|\\๑|\\∮|\\♯|\\♭|\\¶|\\♬|\\♫|\\♪|\\♩|\\✧|\\✦|\\✢|\\✫|\\✡|\\✯|\\❉|\\❆|\\❶|\\❷|\\❸|\\❹|\\❺|\\❻|\\❼|\\❽|\\❾|\\❿|\\①|\\②|\\③|\\④|\\⑤|\\⑥|\\⑦|\\⑧|\\⑨|\\⑩|\\Ⅰ|\\Ⅱ|\\Ⅲ|\\Ⅳ|\\Ⅴ|\\Ⅵ|\\Ⅶ|\\Ⅷ|\\Ⅸ|\\Ⅹ|\\㊀|\\㊁|\\㊂|\\㊃|\\㊄|\\㊅|\\㊆|\\㊇|\\㊈|\\㊉|\\α|\\β|\\γ|\\δ|\\ε|\\ζ|\\η|\\θ|\\ι|\\κ|\\λ|\\μ|\\φ|\\ω|\\π|\\Σ|\\ρ|\\τ|\\Φ|\\Ψ|\\Ω|\\ψ|\\З|\\з|\\л|\\Л|\\ч|\\Ч|\\э|\\Э|\\ю|\\Ю|\\ф|\\Ф|\\¿|\\『|\\』|\\〔|\\〕|\\﹃|\\﹄|\\︻|\\︼|\\「|\\」|\\﹁|\\﹂|\\﹎|\\﹊|\\~|\\˜|\\ˇ|\\ˆ|\\﹏|\\◔|\\◓|\\◒|\\◌|\\◍|\\♔|\\♕|\\♖|\\♙|\\ღ|\\۵|\\≠|\\±|\\≤|\\≥|\\∈|\\∩|\\∪|\\÷|\\≌|\\∽|\\≮|\\≯|\\℃|\\℉|\\¤|\\λ|\\‰|\\∴|\\∵|\\½|\\¼|\\⅓|\\∠|\\⊥|\\≈|\\∫|\\➢|\\➛|\\➤|\\↺|\\↻|\\➭|\\↢|\\↣|\\⇧|\\⇨|\\⇦|\\⇩|\\⇑|\\⇒|\\⇓|\\⇔|\\⇕|\\⇐",
+      "name": "entity.name.type.txt"
+    }
+  ],
+  "scopeName": "source.txt"
 }
+
